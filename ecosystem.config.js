@@ -1,22 +1,57 @@
+// module.exports = {
+//   apps: [
+//     {
+//       name: "config-server",
+//       script: "java",
+//       args: "-jar ./config-server/target/Config-Server-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
+//       log_file:"./logs/config-server.log"
+//     },
+//     {
+//       name: "service-registry",
+//       script: "java",
+//       args: "-jar ./service-registry/target/Service-Registry-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
+//       log_file:"./logs/service-registry.log"
+//     },
+//     {
+//       name: "api-gateway",
+//       script: "java",
+//       args: "-jar ./api-gateway/target/Api-Gateway-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
+//       log_file:"./logs/api-gateway.log"
+//     }
+//   ]
+// }
+
 module.exports = {
   apps: [
     {
       name: "config-server",
       script: "java",
-      args: "-jar ./config-server/target/Config-Server-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
-      log_file:"./logs/config-server.log"
+      args: [
+        "-jar",
+        "./config-server/target/config-server-1.0.0-SNAPSHOT.jar",
+        "--spring.profiles.active=dev"
+      ],
+      log_file: "./logs/config-server.log"
     },
     {
       name: "service-registry",
       script: "java",
-      args: "-jar ./service-registry/target/Service-Registry-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
-      log_file:"./logs/service-registry.log"
+      args: [
+        "-jar",
+        "./service-registry/target/service-registry-1.0.0-SNAPSHOT.jar",
+        "--spring.profiles.active=dev"
+      ],
+      log_file: "./logs/service-registry.log"
     },
     {
       name: "api-gateway",
       script: "java",
-      args: "-jar ./api-gateway/target/Api-Gateway-1.0.0-SNAPSHOT.jar --spring.profiles.active=dev",
-      log_file:"./logs/api-gateway.log"
+      args: [
+        "-jar",
+        "./api-gateway/target/api-gateway-1.0.0-SNAPSHOT.jar",
+        "--spring.profiles.active=dev"
+      ],
+      log_file: "./logs/api-gateway.log"
     }
   ]
-}
+};
